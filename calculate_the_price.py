@@ -19,7 +19,7 @@ import json #For JSON Parsing
 
 from Cart import Cart #For Cart Class Containing Items
 from BasePriceDB import BasePriceDB #For Base Price Class DataBase Creation
-from PriceCalculator import PriceCalculator #For Price Calculator Class - Find Price
+from PriceCalculator import PriceCalculator #Price Calculator Class - Find Price
 # ---------------------------------------------------------------------------- #
 # Helper Functions for Price Calculator
 # ---------------------------------------------------------------------------- #
@@ -81,9 +81,9 @@ def main(self):
     # ------------------------------------------------------------------------ #
     base_price_db = BasePriceDB(price_json)
 
-    # ---------------------------------------------------------------------------- #
+    # ------------------------------------------------------------------------ #
     # Initialize Price Calculator
-    # ---------------------------------------------------------------------------- #
+    # ------------------------------------------------------------------------ #
     price_calculator = PriceCalculator(rb_cart, base_price_db)
 
     # ------------------------------------------------------------------------ #

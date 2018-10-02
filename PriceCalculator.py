@@ -53,7 +53,8 @@ class PriceCalculator:
         running_total = 0
         product_items = cart.get_product_items()
         for product in product_items:
-            running_total = running_total + base_price_db.get_price_point(product)
+            running_total = running_total + \
+            base_price_db.get_price_point(product)
         return running_total
 
     def get_price_cents(self):

@@ -30,8 +30,8 @@ class ProductItem:
             product_type (String): The Type of the Product Being Purchased.
             options (Key-value pairs of strings.): Options that the Product Item
             Falls Under.
-            artist_markup (Integer): The artist markup in percent, for example 20 
-            represents a 20% markup.
+            artist_markup (Integer): The artist markup in percent, for example 
+            20 represents a 20% markup.
             quantity (Integer): The quantity of this item.
         
         Returns:
