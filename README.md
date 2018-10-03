@@ -8,13 +8,12 @@ Redbubble Summer 2019 Internship Coding Challenge
 ## Technologies Used
 * Developed on the macOS High Sierra Version 10.13.6 using Visual Studio Code<br>
 * Python 3.6.3 for CL Application<br>
-* Bash Scripts for Automated Testing<br>
 
 ## Dependencies Needed
 * Only Python2 or Python3 (Both Compatible)
 * argparse library (pip install argparse)
 * json library (Already a Built-In Module with Python)
-
+* unittest library (Already a Built-In Module with Python)
 
 ## Usage
 To get the Total Price of the Redbubble Shopping Cart (in Cents), run: python calculate_the_price.py -c /PATHTOCARTJSON -p /PATHTOBASEPRICE<br>
@@ -22,6 +21,12 @@ The order of the command line arguments do not matter, use '-h' option for help.
 *I Chose to Add the Command Line Options for Clarity for the user on Which File is Which - CART and BASE PRICE*
 
 ## TESTING
+https://powerfulpython.com/blog/automated-tests-types-for-python/ <br>
+Automated Tests in Python -> Unit Testing in Python. <br>
+Unit Test - Test a Specific Component in Isolation. <br>
+Integration Test - Test How two Components Interact with each other. <br>
+End-to-End Test - Test Entire Flow of Application. <br>
+Run: python automated_tests.py -v
 
 ## Design Implementation
 I chose to go the Object - Oriented Route in creating Cart, ProductItem, BasePriceDB, and PriceCalculator Classes since all can be stand alone - for future extendibilty with other Objects. The Classes are all simple with obvious User Interfaces (function names) for anyone to pick up and code (Add and Change Implementations). This design was rather simple with Python's built in JSON Parsing Library and Argument Parser.<br>
@@ -34,3 +39,5 @@ I would improve this with a DataBase Selection for Prices!
 * https://developer.rhino3d.com/guides/rhinopython/python-xml-json/
 * https://stackoverflow.com/questions/2835559/parsing-values-from-a-json-file
 * https://docs.python.org/3/library/argparse.html
+* https://docs.python.org/3/library/unittest.html
+* https://www.youtube.com/watch?v=ApTZib0L2X8
