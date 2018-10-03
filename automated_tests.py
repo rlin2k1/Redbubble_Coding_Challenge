@@ -48,9 +48,8 @@ class TestPriceCalculator(unittest.TestCase):
     def test_cart_prices_json(self):
         print()
         print("Following Tests tested with Base Price File: " + \
-        list_of_price_jsons[0])
-        print("----------------------------------------------------------------\
--------")
+        list_of_price_jsons[0] + ":")
+        print()
         for i in range(0, len(list_of_cart_jsons)):
             print("Testing Cart JSON File: " + list_of_cart_jsons[i] + \
             " with Expected Cart Value of " + str(list_of_checkout_prices[i]))
@@ -68,6 +67,8 @@ class TestPriceCalculator(unittest.TestCase):
             self.assertEqual(actual_cart_value, list_of_checkout_prices[i])
             print(" - PASS")
             print()
+        print("----------------------------------------------------------------\
+-------")
 
     def test_cart_item_count(self):
         for i in range(0, len(list_of_cart_jsons)):
@@ -86,6 +87,8 @@ class TestPriceCalculator(unittest.TestCase):
             list_of_cart_item_count[i])
             print(" - PASS")
             print()
+        print("----------------------------------------------------------------\
+-------")
 
     def test_price_item_count(self):
         print()
@@ -105,6 +108,8 @@ class TestPriceCalculator(unittest.TestCase):
             list_of_price_item_count[i])
             print(" - PASS")
             print()
+        print("----------------------------------------------------------------\
+-------")
 
     def test_mark_up_prices(self):
         print()
@@ -133,6 +138,10 @@ class TestPriceCalculator(unittest.TestCase):
                 mark_up_prices_index = mark_up_prices_index + 1
                 print(" - PASS")
                 print()
+            print(list_of_cart_jsons[i] + " = PASS")
+            print()
+        print("----------------------------------------------------------------\
+-------")
 
 if __name__ == '__main__':
     unittest.main()
