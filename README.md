@@ -10,7 +10,7 @@ Redbubble Summer 2019 Internship Coding Challenge
 * Python 3.6.3 for CL Application<br>
 
 ## Dependencies Needed
-* Only Python2 or Python3 (Both Compatible)
+* Python2 or Python3 (Both Compatible)
 * argparse library (pip install argparse)
 * json library (Already a Built-In Module with Python)
 * unittest library (Already a Built-In Module with Python)
