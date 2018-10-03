@@ -40,7 +40,7 @@ def return_json_data(path_to_file):
         print("Cannot Open the Path to " + path_to_file)
         exit(1)
 
-def main(self):
+def main():
     """
     main Function for the Redbubble Coding Challenge of Calculating the Price
     in the Redbubble Shopping Cart in terms of Cents.

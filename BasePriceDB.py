@@ -32,6 +32,36 @@ class BasePriceDB:
             (void): No return value. Just sets member variables.
         """
         self._price_json = price_json
+        self._price_count = self.calculate_price_count(price_json)
+
+    def calculate_price_count(self, price_json):
+        """
+        Calculates How Many Different Items there Are in the Base Prices.
+        
+        Args:
+            self (none): None.
+            price_json (JSON Object): JSON Object Represented in the Base Price
+            JSON File.
+        Returns:
+            (Integer): Count of Different Items in Base Prices.
+        """
+        count = 0
+        for price_item in price_json:
+            count = count + 1
+        return count
+
+    def get_price_count(self):
+        """
+        Public Accessor for the Member Variable: Price Count - Integer.
+        *More Memory Efficient for BasePriceDB if calculate_price_count()
+        was already called.*
+        
+        Args:
+            self (none): None.
+        Returns:
+            (Integer): Count of Different Items in Base Prices.
+        """
+        return self._price_count
     
     def get_price_json(self):
         """
@@ -74,7 +104,7 @@ class BasePriceDB:
                     base_price = price['base-price']
                     break
 
-        price = base_price + round(base_price * product.get_artist_markup()\
-        / 100) * product.get_quantity()
+        price = (base_price + round(base_price * product.get_artist_markup()\
+        / 100) ) * product.get_quantity()
 
         return int(price)
