@@ -19,6 +19,7 @@ class BasePriceDB:
     Attributes:
         _price_json (JSON Object): JSON Object Represented in the Base Price
         JSON File.
+        _price_count (Integer): The Count of different items in Base Prices
     """
     def __init__(self, price_json):
         """
