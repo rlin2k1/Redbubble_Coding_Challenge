@@ -11,6 +11,7 @@ Date Created:
 # Import Statements for the Necessary Packages / Modules
 # ---------------------------------------------------------------------------- #
 from ProductItem import ProductItem
+from Cart import Cart
 
 class BasePriceDB:
     """
@@ -21,7 +22,7 @@ class BasePriceDB:
         JSON File.
         _price_count (Integer): The Count of different items in Base Prices
     """
-    def __init__(self, price_json):
+    def __init__(self, price_json, discount_json, cart):
         """
         Constructor for the BasePriceDB Class.
         
@@ -32,8 +33,10 @@ class BasePriceDB:
         Returns:
             (void): No return value. Just sets member variables.
         """
+        self._cart = cart
         self._price_json = price_json
         self._price_count = self.calculate_price_count(price_json)
+        self._discount_json = discount_json
 
     def calculate_price_count(self, price_json):
         """
@@ -107,5 +110,28 @@ class BasePriceDB:
 
         price = (base_price + round(base_price * product.get_artist_markup()\
         / 100) ) * product.get_quantity()
+
+        #Check if the Quantity of the Product Meets the Discount Threshold
+        #If so, update Price
+        product_quant_dict = self._cart.get_product_quant_dict()
+        product_type = product.get_product_type()
+
+        final_quantity = product_quant_dict[product_type] #NEED TO GET FROM CART DICTIONARY -> From Product Type
+
+        optimal_threshold = -1
+        optimal_percentage = -1
+
+        for product_d in self._discount_json:
+            if product_type == product_d['product-type']:
+                discounts = product_d['discounts']
+                for discount in discounts:
+                    if final_quantity >= discount['threshold'] and discount['threshold'] > optimal_threshold:
+                        optimal_threshold = discount['threshold']
+                        optimal_percentage = discount['percent']
+                        
+                        #NEED TO KEEP PERCENTAGE
+
+        if(optimal_threshold != -1 and optimal_percentage != -1):
+            price = round(price * (100.0 - optimal_percentage) / 100)
 
         return int(price)

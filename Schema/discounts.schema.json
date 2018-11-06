@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "product-type": {
+        "type": "string",
+        "description": "The product type the discount applies to."
+      },
+      "discounts": {
+        "type": "array",
+        "description": "A list of thresholds and discounts.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "threshold": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "The threshold when this discount applies to the product-type."
+            },
+            "percent": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "description": "The percent the items of the product-type are discounted by."
+            }
+          },
+          "required": [
+            "threshold",
+            "percent"
+          ]
+        }
+      }
+    },
+    "required": [
+      "product-type",
+      "discounts"
+    ]
+  }
+}

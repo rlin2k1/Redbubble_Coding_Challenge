@@ -34,6 +34,7 @@ class Cart:
             (void): No return value. Just sets member variables.
         """
         self._cart_json = cart_json #Can Be Useful in Future
+        self._product_counts = {}
         self._list_of_ProductItems = self.make_product_items(cart_json)
 
     def make_product_items(self, cart_json):
@@ -57,8 +58,15 @@ class Cart:
             quantity = product['quantity']
             new_product = ProductItem(product_type, options, artist_markup, \
             quantity)
+            if(product_type not in self._product_counts):
+                self._product_counts[product_type] = quantity
+            else:
+                self._product_counts[product_type] = self._product_counts[product_type] + quantity
             rs.append(new_product)
         return rs;
+    
+    def get_product_quant_dict(self):
+        return self._product_counts
 
     def get_product_items(self):
         """

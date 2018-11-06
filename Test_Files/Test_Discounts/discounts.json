@@ -1,0 +1,24 @@
+[
+  {
+    "product-type": "hoodie",
+    "discounts": [
+      {
+        "threshold": 3,
+        "percent": 15
+      }
+    ]
+  },
+  {
+    "product-type": "sticker",
+    "discounts": [
+      {
+        "threshold": 4,
+        "percent": 25
+      },
+      {
+        "threshold": 10,
+        "percent": 50
+      }
+    ]
+  }
+]

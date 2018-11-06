@@ -59,6 +59,8 @@ def main():
     help="PATH TO CART JSON")
     argument_parser.add_argument("-p", "--price", required=True, \
     help="PATH TO BASE PRICE JSON")
+    argument_parser.add_argument("-d", "--discount", required=True, \
+    help="PATH TO DISCOUNT JSON")
 
     arguments = vars(argument_parser.parse_args())
 
@@ -67,9 +69,11 @@ def main():
     # ------------------------------------------------------------------------ #
     path_to_cart = arguments['cart']
     path_to_price = arguments['price']
+    path_to_discount = arguments['discount']
 
     cart_json = return_json_data(path_to_cart)
     price_json = return_json_data(path_to_price)
+    discount_json = return_json_data(path_to_discount)
 
     # ------------------------------------------------------------------------ #
     # Initialize Cart with Each Item
@@ -77,9 +81,9 @@ def main():
     rb_cart = Cart(cart_json)
 
     # ------------------------------------------------------------------------ #
-    # Intialize Base Price DataBase
+    # Initialize Base Price DataBase
     # ------------------------------------------------------------------------ #
-    base_price_db = BasePriceDB(price_json)
+    base_price_db = BasePriceDB(price_json, discount_json, rb_cart)
 
     # ------------------------------------------------------------------------ #
     # Initialize Price Calculator
