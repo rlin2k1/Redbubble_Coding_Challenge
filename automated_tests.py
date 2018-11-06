@@ -24,7 +24,7 @@ from PriceCalculator import PriceCalculator #Price Calculator Class - Find Price
 from calculate_the_price import return_json_data
 
 # ---------------------------------------------------------------------------- #
-# Intialization of Testing Variables - Easily Extendible and Dynamic!
+# Initialization of Testing Variables - Easily Extendible and Dynamic!
 # ---------------------------------------------------------------------------- #
 list_of_cart_jsons = ['./Test_Files/Test_Carts/cart-4560.json', \
 './Test_Files/Test_Carts/cart-9363.json', \
