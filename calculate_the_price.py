@@ -3,7 +3,7 @@ http://take-home-test.herokuapp.com/new-product-engineer
 Price Calculator Command-Line Program - Outputs the Total Price in the User's
 Shopping Cart in Cents.
 
-USAGE: python3 calculate_the_price -c /PATHTOCARTJSON -p /PATHTOBASEPRICE
+USAGE: python3 calculate_the_price -c /PATHTOCARTJSON -p /PATHTOBASEPRICEJSON -d /PATHTODISCOUNTJSON
 
 Author(s):
     Redbubble Applicant
@@ -65,7 +65,7 @@ def main():
     arguments = vars(argument_parser.parse_args())
 
     # ------------------------------------------------------------------------ #
-    # Get and Load JSON Paths for Cart and Base Prices
+    # Get and Load JSON Paths for Cart, Base Prices, and Discounts
     # ------------------------------------------------------------------------ #
     path_to_cart = arguments['cart']
     path_to_price = arguments['price']
@@ -81,7 +81,7 @@ def main():
     rb_cart = Cart(cart_json)
 
     # ------------------------------------------------------------------------ #
-    # Initialize Base Price DataBase
+    # Initialize Base Price DataBase with Cart and Discount
     # ------------------------------------------------------------------------ #
     base_price_db = BasePriceDB(price_json, discount_json, rb_cart)
 
