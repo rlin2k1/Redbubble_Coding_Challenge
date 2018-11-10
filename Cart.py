@@ -19,6 +19,7 @@ class Cart:
     Attributes:
         _cart_json (JSON Object): JSON Object Represented in the Cart JSON 
         File.
+        _self._product_counts (Dictionary): Key - Product Type | Value - Quantity
         _list_of_ProductItems (List): Contains Product Items in a List.
     """
     def __init__(self, cart_json):
@@ -66,6 +67,14 @@ class Cart:
         return rs;
     
     def get_product_quant_dict(self):
+        """
+        Public Accessor for the Member Variable: Product Counts.
+        
+        Args:
+            self (none): None.
+        Returns:
+            (Dictionary): Contains the Quantity for Each Product Type
+        """
         return self._product_counts
 
     def get_product_items(self):
