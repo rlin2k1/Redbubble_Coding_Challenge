@@ -18,7 +18,11 @@ class BasePriceDB:
     BasePriceDB Class - Represents a Database Price Point for Product Items.
     
     Attributes:
+        _cart (Cart Object): Cart Object Representing a Shopping Cart Containing
+            Product Items.
         _price_json (JSON Object): JSON Object Represented in the Base Price
+        JSON File.
+        _discount_json (JSON Object): JSON Object Represented in the Discounts
         JSON File.
         _price_count (Integer): The Count of different items in Base Prices
     """
@@ -30,6 +34,10 @@ class BasePriceDB:
             self (none): None.
             price_json (JSON Object): JSON Object Represented in the Base Price
             JSON File.
+            discount_json (JSON Object): JSON Object Represented in the Discounts
+            JSON File.
+            cart (Cart Object): Cart Object Representing a Shopping Cart Containing
+            Product Items.
         Returns:
             (void): No return value. Just sets member variables.
         """
@@ -112,7 +120,7 @@ class BasePriceDB:
         / 100) ) * product.get_quantity()
 
         #Check if the Quantity of the Product Meets the Discount Threshold
-        #If so, update Price
+        #If so, Update Price
         product_quant_dict = self._cart.get_product_quant_dict()
         product_type = product.get_product_type()
 
@@ -127,9 +135,7 @@ class BasePriceDB:
                 for discount in discounts:
                     if final_quantity >= discount['threshold'] and discount['threshold'] > optimal_threshold:
                         optimal_threshold = discount['threshold']
-                        optimal_percentage = discount['percent']
-                        
-                        #NEED TO KEEP PERCENTAGE
+                        optimal_percentage = discount['percent'] #NEED TO KEEP PERCENTAGE
 
         if(optimal_threshold != -1 and optimal_percentage != -1):
             price = round(price * (100.0 - optimal_percentage) / 100)
