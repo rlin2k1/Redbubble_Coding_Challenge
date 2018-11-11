@@ -16,9 +16,9 @@ Redbubble Summer 2019 Internship Coding Challenge
 * unittest library (Already a Built-In Module with Python)
 
 ## Usage
-To get the Total Price of the Redbubble Shopping Cart (in Cents), run: python calculate_the_price.py -c /PATHTOCARTJSON -p /PATHTOBASEPRICE<br>
+To get the Total Price of the Redbubble Shopping Cart (in Cents), run: python calculate_the_price.py -c /PATHTOCARTJSON -p /PATHTOBASEPRICEJSON -d /PATHTODISCOUNTJSON<br>
 The order of the command line arguments do not matter, use '-h' option for help. Can Specify Local or Absolute Path to the Cart and Base Price JSON Files. If Permission Problems for opening JSON Files, run 'chmod 755 'JSONFILES'<br>
-*I Chose to Add the Command Line Options for Clarity for the user on Which File is Which - CART and BASE PRICE*
+*I Chose to Add the Command Line Options for Clarity for the user on Which File is Which - CART, BASE PRICE, and DISCOUNT*
 
 ## TESTING
 https://powerfulpython.com/blog/automated-tests-types-for-python/ <br>
