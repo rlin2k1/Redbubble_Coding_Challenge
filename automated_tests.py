@@ -6,7 +6,7 @@ DO NOT FORGET EDGE CASES!
     -What if Repeated Item in Cart with Separate Quanities?
 
 Author(s):
-    Redbubble Applicant
+    Roy Lin
 
 Date Created:
     October 2nd, 2018
