@@ -6,7 +6,7 @@ Shopping Cart in Cents.
 USAGE: python3 calculate_the_price -c /PATHTOCARTJSON -p /PATHTOBASEPRICEJSON -d /PATHTODISCOUNTJSON
 
 Author(s):
-    Redbubble Applicant
+    Roy Lin
 
 Date Created:
     October 1st, 2018
