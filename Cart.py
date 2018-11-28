@@ -2,7 +2,7 @@
 This module Contains the Cart Class.
 
 Author(s):
-    Redbubble Applicant
+    Roy Lin
 
 Date Created:
     October 1st, 2018
