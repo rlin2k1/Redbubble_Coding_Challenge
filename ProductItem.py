@@ -2,7 +2,7 @@
 This module contains the ProductItem Class.
 
 Author(s):
-    Redbubble Applicant
+    Roy Lin
 
 Date Created:
     October 2nd, 2018
