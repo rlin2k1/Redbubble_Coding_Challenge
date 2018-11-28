@@ -1,5 +1,5 @@
-# Redbubble_Coding_Challenge
-Redbubble Summer 2019 Internship Coding Challenge
+# Redbubble_Price_Calculator
+Redbubble Price Calculator
 
 ## Purpose
 * http://take-home-test.herokuapp.com/new-product-engineer<br>
